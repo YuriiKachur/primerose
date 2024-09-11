@@ -1,30 +1,84 @@
-body {
+body, html {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    margin: 20px;
 }
 
-h1, h2 {
-    color: #2c3e50;
+header nav ul {
+    list-style-type: none;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
 }
 
-.flat-list {
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url('/static/hero-image.jpg'); /* Add your own hero image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.flat {
-    border: 1px solid #ccc;
+.search-bar {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input, .search-bar button {
     padding: 10px;
-    margin: 10px;
-    width: 250px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
 }
 
-img {
-    display: block;
-    margin-top: 10px;
+.search-bar input {
+    flex-grow: 1;
 }
 
-a {
-    display: inline-block;
-    margin-bottom: 20px;
+.search-bar button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.feature-card {
+    width: 30%;
+}
+
+.feature-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
 }
