@@ -3,28 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flat Rentals</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Available Flats for Rent</h1>
-    <a href="/add_flat">Add New Flat</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="flat-list">
-        {% for flat in flats %}
-            <div class="flat">
-                <h2>{{ flat.title }}</h2>
-                <p>Price: ${{ flat.price }}</p>
-                <p>Description: {{ flat.description }}</p>
-                {% if flat.photo %}
-                    <img src="{{ flat.photo }}" alt="{{ flat.title }}" width="200">
-                {% else %}
-                    <p>No photo available</p>
-                {% endif %}
-            </div>
-        {% else %}
-            <p>No flats available for rent.</p>
+    <section class="hero">
+        <div class="overlay">
+            <form action="/search" method="POST" class="search-bar">
+                <input type="text" name="location" placeholder="Where do you want to stay?" required>
+                <input type="date" name="move_in_date" required>
+                <input type="number" name="length_of_stay" placeholder="Length of stay (days)" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="features">
+        {% for destination in destinations %}
+        <div class="feature-card">
+            <img src="{{ url_for('static', filename=destination.image) }}" alt="{{ destination.city }}">
+            <h3>{{ destination.city }}</h3>
+            <p>{{ destination.description }}</p>
+        </div>
         {% endfor %}
-    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
