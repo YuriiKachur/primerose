@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Sales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Cars for Sale</h1>
+    
+    <form action="/add_car" method="POST">
+        <label for="brand">Brand:</label>
+        <input type="text" id="brand" name="brand" required><br><br>
+        
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required><br><br>
+        
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required><br><br>
+        
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required><br><br>
+        
+        <input type="submit" value="Add Car">
+    </form>
+
+    <h2>Available Cars</h2>
+    <ul>
+    {% for car in cars %}
+        <li>{{ car.brand }} {{ car.model }} ({{ car.year }}) - ${{ car.price }}</li>
+    {% else %}
+        <li>No cars available</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
