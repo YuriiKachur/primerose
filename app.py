@@ -5,7 +5,7 @@ app = Flask(__name__)
 # Dummy data for popular destinations (could be retrieved from a database)
 popular_destinations = [
     {"city": "New York", "image": "new_york.jpg", "description": "Explore furnished apartments in New York"},
-    {"city": "London", "image": "london.jpg", "description": "Find your next home in London"},
+    {"city": "Lviv", "image": "https://drive.google.com/drive/folders/1Ipo_395zmwzPiwVUrcgCpM0VxD2qiBn0?usp=sharing", "description": "Find your next home in Lviv"},
     {"city": "Dubai", "image": "dubai.jpg", "description": "Discover premium stays in Dubai"}
 ]
 
