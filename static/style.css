@@ -82,3 +82,23 @@ footer {
     padding: 20px;
     background-color: #f1f1f1;
 }
+<style>
+    .contact-method {
+        margin-bottom: 10px; /* Space between each link */
+    }
+
+    .contact-method img {
+        vertical-align: middle;
+        margin-right: 8px; /* Space between the icon and text */
+    }
+
+    .contact-method a {
+        text-decoration: none; /* Remove underline */
+        color: black; /* Customize this color as needed */
+        font-size: 16px;
+    }
+
+    .contact-method a:hover {
+        color: #007bff; /* Change link color on hover */
+    }
+</style>
